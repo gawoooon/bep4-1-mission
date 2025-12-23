@@ -7,6 +7,8 @@ import static jakarta.persistence.FetchType.LAZY;
 
 import com.back.boundedContext.member.entity.Member;
 import com.back.global.jpa.entity.BaseIdAndTime;
+import com.back.shared.post.dto.PostCommentDto;
+import com.back.shared.post.event.PostCommentCreatedEvent;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -37,8 +39,7 @@ public class Post extends BaseIdAndTime {
     public PostComment addComment(Member author, String content) {
         PostComment postComment = new PostComment(this, author, content);
         comments.add(postComment);
-        //결합도 발생
-        author.increaseActivityScore(1);
+        publishEvent(new PostCommentCreatedEvent(new PostCommentDto(postComment)));
         return postComment;
     }
 
