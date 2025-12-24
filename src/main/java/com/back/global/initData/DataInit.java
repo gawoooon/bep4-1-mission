@@ -3,7 +3,7 @@ package com.back.global.initData;
 import com.back.boundedContext.member.app.MemberFacade;
 import com.back.boundedContext.member.domain.Member;
 import com.back.boundedContext.post.domain.Post;
-import com.back.boundedContext.post.app.PostService;
+import com.back.boundedContext.post.app.PostFacade;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
@@ -17,15 +17,15 @@ public class DataInit {
 
     private final DataInit self;
     private final MemberFacade memberFacade;
-    private final PostService postService;
+    private final PostFacade postFacade;
 
 
     public DataInit(@Lazy DataInit self,
                     MemberFacade memberFacade,
-                    PostService postService) {
+                    PostFacade postFacade) {
         this.self = self;
         this.memberFacade = memberFacade;
-        this.postService = postService;
+        this.postFacade = postFacade;
     }
 
     @Bean
@@ -54,7 +54,7 @@ public class DataInit {
 
     @Transactional
     public void makeBasePosts() {
-        if (postService.count() > 0) {
+        if (postFacade.count() > 0) {
             return;
         }
 
@@ -62,21 +62,21 @@ public class DataInit {
         Member user2Member = memberFacade.findByUsername("user2").get();
         Member user3Member = memberFacade.findByUsername("user3").get();
 
-        Post post1 = postService.write(user1Member, "title1", "content1");
-        Post post2 = postService.write(user1Member, "title2", "content2");
-        Post post3 = postService.write(user1Member, "title3", "content3");
-        Post post4 = postService.write(user2Member, "title4", "content4");
-        Post post5 = postService.write(user2Member, "title5", "content5");
-        Post post6 = postService.write(user3Member, "title6", "content6");
+        Post post1 = postFacade.write(user1Member, "title1", "content1");
+        Post post2 = postFacade.write(user1Member, "title2", "content2");
+        Post post3 = postFacade.write(user1Member, "title3", "content3");
+        Post post4 = postFacade.write(user2Member, "title4", "content4");
+        Post post5 = postFacade.write(user2Member, "title5", "content5");
+        Post post6 = postFacade.write(user3Member, "title6", "content6");
     }
 
     @Transactional
     public void makeBasePostComments() {
-        Post post1 = postService.findById(1).get();
-        Post post2 = postService.findById(2).get();
-        Post post3 = postService.findById(3).get();
-        Post post4 = postService.findById(4).get();
-        Post post5 = postService.findById(5).get();
+        Post post1 = postFacade.findById(1).get();
+        Post post2 = postFacade.findById(2).get();
+        Post post3 = postFacade.findById(3).get();
+        Post post4 = postFacade.findById(4).get();
+        Post post5 = postFacade.findById(5).get();
 
         Member user1Member = memberFacade.findByUsername("user1").get();
         Member user2Member = memberFacade.findByUsername("user2").get();

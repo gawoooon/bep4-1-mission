@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class MemberFacade {
 
     private final MemberRepository memberRepository;
-    private final MemberJoinUsecase memberJoinUsecase;
+    private final MemberJoinUseCase memberJoinUsecase;
 
     @Transactional(readOnly = true)
     public long count() {

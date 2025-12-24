@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class MemberJoinUsecase {
+public class MemberJoinUseCase {
     private final MemberRepository memberRepository;
 
     public Member join(String username, String password, String nickname) {
