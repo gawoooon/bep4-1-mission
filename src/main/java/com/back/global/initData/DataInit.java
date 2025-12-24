@@ -4,6 +4,7 @@ import com.back.boundedContext.member.app.MemberFacade;
 import com.back.boundedContext.member.domain.Member;
 import com.back.boundedContext.post.app.PostFacade;
 import com.back.boundedContext.post.domain.Post;
+import com.back.boundedContext.post.domain.PostMember;
 import com.back.global.rsData.RsData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationRunner;
@@ -59,9 +60,9 @@ public class DataInit {
             return;
         }
 
-        Member user1Member = memberFacade.findByUsername("user1").get();
-        Member user2Member = memberFacade.findByUsername("user2").get();
-        Member user3Member = memberFacade.findByUsername("user3").get();
+        PostMember user1Member = postFacade.findPostMemberByUsername("user1").get();
+        PostMember user2Member = postFacade.findPostMemberByUsername("user2").get();
+        PostMember user3Member = postFacade.findPostMemberByUsername("user3").get();
 
         RsData<Post> post1RsData = postFacade.write(user1Member, "제목1", "내용1");
         log.debug(post1RsData.getMsg());
@@ -90,9 +91,9 @@ public class DataInit {
         Post post4 = postFacade.findById(4).get();
         Post post5 = postFacade.findById(5).get();
 
-        Member user1Member = memberFacade.findByUsername("user1").get();
-        Member user2Member = memberFacade.findByUsername("user2").get();
-        Member user3Member = memberFacade.findByUsername("user3").get();
+        PostMember user1Member = postFacade.findPostMemberByUsername("user1").get();
+        PostMember user2Member = postFacade.findPostMemberByUsername("user2").get();
+        PostMember user3Member = postFacade.findPostMemberByUsername("user3").get();
 
         if (post1.hasComments()) return;
 
