@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- **17강 : BaseMember 클래스 도입** ✅
+- **19강 : syncMember 메서드 리팩토링, PostMember 클래스 생성자가 id, createDate, modifyDate 칼럼도 같이 받기** ✅
 
 ---
 
