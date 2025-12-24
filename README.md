@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- **10강 : MemberPolicy 도입** ✅
+- **17강 : BaseMember 클래스 도입** ✅
 
 ---
 
@@ -53,8 +53,12 @@ src/main/java/com/back
 │       └── RsData.java
 └── shared
     ├── member
-    │   └── out
-    │       └── MemberApiClient.java
+    │   ├── out
+    │   │   └── MemberApiClient.java
+    │   └── domain
+    │       ├── BaseMember.java
+    │       ├── ReplicaMember.java
+    │       └── SourceMember.java
     └── post
         ├── dto
         │   ├── PostCommentDto.java
