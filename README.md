@@ -24,6 +24,7 @@ src/main/java/com/back
 │   │   │   ├── Member.java
 │   │   │   └── MemberPolicy.java
 │   │   ├── in
+│   │   │   ├── ApiV1MemberController.java
 │   │   │   └── MemberEventListener.java
 │   │   └── out
 │   │       └── MemberRepository.java
@@ -33,28 +34,34 @@ src/main/java/com/back
 │       │   └── PostWriteUseCase.java
 │       ├── domain
 │       │   ├── Post.java
-│       │   └── PostComment.java
+│       │   ├── PostComment.java
+│       │   └── PostMember.java
 │       └── out
 │           └── PostRepository.java
-└── global
-    ├── event
-    │   └── EventPublisher.java
-    ├── exception
-    │   └── DomainException.java
-    ├── initData
-    │   └── DataInit.java
-    ├── jpa
-    │   └── entity
-    │       ├── BaseEntity.java
-    │       └── BaseIdAndTime.java
-    └── shared
-        └── post
-            ├── dto
-            │   ├── PostCommentDto.java
-            │   └── PostDto.java
-            └── event
-                ├── PostCommentCreatedEvent.java
-                └── PostCreatedEvent.java
+├── global
+│   ├── event
+│   │   └── EventPublisher.java
+│   ├── exception
+│   │   └── DomainException.java
+│   ├── initData
+│   │   └── DataInit.java
+│   ├── jpa
+│   │   └── entity
+│   │       ├── BaseEntity.java
+│   │       └── BaseIdAndTime.java
+│   └── rsData
+│       └── RsData.java
+└── shared
+    ├── member
+    │   └── out
+    │       └── MemberApiClient.java
+    └── post
+        ├── dto
+        │   ├── PostCommentDto.java
+        │   └── PostDto.java
+        └── event
+            ├── PostCommentCreatedEvent.java
+            └── PostCreatedEvent.java
 ```
 
 
