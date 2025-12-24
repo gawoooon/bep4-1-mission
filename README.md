@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- **19강 : syncMember 메서드 리팩토링, PostMember 클래스 생성자가 id, createDate, modifyDate 칼럼도 같이 받기** ✅
+- **20강 : 회원정보가 수정되었을 때도 PostMember 테이블에 동기화** ✅
 
 ---
 
@@ -51,21 +51,27 @@ src/main/java/com/back
 │   │       └── BaseIdAndTime.java
 │   └── rsData
 │       └── RsData.java
-└── shared
-    ├── member
-    │   ├── out
-    │   │   └── MemberApiClient.java
-    │   └── domain
-    │       ├── BaseMember.java
-    │       ├── ReplicaMember.java
-    │       └── SourceMember.java
-    └── post
-        ├── dto
+└── shared/
+    ├── member/
+    │   ├── domain/
+    │   │   ├── BaseMember.java
+    │   │   ├── ReplicaMember.java
+    │   │   └── SourceMember.java
+    │   ├── dto/
+    │   │   └── MemberDto.java
+    │   ├── event/
+    │   │   ├── MemberJoinedEvent.java
+    │   │   └── MemberModifiedEvent.java
+    │   ├── out/
+    │       └── MemberApiClient.java
+    ├── post/
+        ├── dto/
         │   ├── PostCommentDto.java
         │   └── PostDto.java
-        └── event
+        ├── event/
             ├── PostCommentCreatedEvent.java
             └── PostCreatedEvent.java
+
 ```
 
 
