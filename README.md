@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 28강 : post 모듈 리팩토링, Facade에 직접 구현된 기능들을 유즈케이스로 분리 ✅
+- 29강 : member 모듈 리팩토링, Facade에 직접 구현된 기능들을 유즈케이스로 분리 ✅
 
 ---
 
@@ -34,7 +34,9 @@ src/main/java/com/back/
 │   ├── member/
 │   │   ├── app/
 │   │   │   ├── MemberFacade.java
-│   │   │   └── MemberJoinUseCase.java
+│   │   │   ├── MemberGetRandomSecureTipUseCase.java
+│   │   │   ├── MemberJoinUseCase.java
+│   │   │   └── MemberSupport.java
 │   │   ├── domain/
 │   │   │   ├── Member.java
 │   │   │   └── MemberPolicy.java
