@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 29강 : member 모듈 리팩토링, Facade에 직접 구현된 기능들을 유즈케이스로 분리 ✅
+- 30강 : market 모듈 추가, MarketMember 구현 ✅
 
 ---
 
@@ -31,6 +31,16 @@ src/main/java/com/back/
 │   │   ├── out/
 │   │       ├── CashMemberRepository.java
 │   │       └── WalletRepository.java
+│   ├── market/
+│   │   ├── app/
+│   │   │   ├── MarketFacade.java
+│   │   │   └── MarketSyncMemberUseCase.java
+│   │   ├── domain/
+│   │   │   └── MarketMember.java
+│   │   ├── in/
+│   │   │   └── MarketEventListener.java
+│   │   ├── out/
+│   │       └── MarketMemberRepository.java
 │   ├── member/
 │   │   ├── app/
 │   │   │   ├── MemberFacade.java
@@ -103,7 +113,6 @@ src/main/java/com/back/
 │           ├── PostCommentCreatedEvent.java
 │           └── PostCreatedEvent.java
 └── BackApplication.java
-
 
 ```
 
