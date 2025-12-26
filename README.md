@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 27강 : cash 모듈 리팩토링, CashEventListener에 있는 비지니스 로직을 이벤트를 사용하여 제거 ✅
+- 28강 : post 모듈 리팩토링, Facade에 직접 구현된 기능들을 유즈케이스로 분리 ✅
 
 ---
 
@@ -47,6 +47,8 @@ src/main/java/com/back/
 │   ├── post/
 │       ├── app/
 │       │   ├── PostFacade.java
+│       │   ├── PostSupport.java
+│       │   ├── PostSyncMemberUseCase.java
 │       │   └── PostWriteUseCase.java
 │       ├── domain/
 │       │   ├── Post.java
@@ -99,6 +101,7 @@ src/main/java/com/back/
 │           ├── PostCommentCreatedEvent.java
 │           └── PostCreatedEvent.java
 └── BackApplication.java
+
 
 ```
 
