@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- **22강 : 초기 데이터 만드는 코드도 모듈별로 분리 ** ✅
+- 24강 : CashMember와 1:1 관계인 지갑 생성 ✅
 
 ---
 
@@ -13,64 +13,83 @@
 <summary><b>핵심 패키지 (src/main/java/com/back)</b></summary>
 
 ```text
-src/main/java/com/back
-├── BackApplication.java
-├── boundedContext
-│   ├── member
-│   │   ├── app
+src/main/java/com/back/
+├── boundedContext/
+│   ├── cash/
+│   │   ├── app/
+│   │   │   └── CashFacade.java
+│   │   ├── domain/
+│   │   │   ├── CashMember.java
+│   │   │   └── Wallet.java
+│   │   ├── in/
+│   │   │   └── CashEventListener.java
+│   │   ├── out/
+│   │       ├── CashMemberRepository.java
+│   │       └── WalletRepository.java
+│   ├── member/
+│   │   ├── app/
 │   │   │   ├── MemberFacade.java
 │   │   │   └── MemberJoinUseCase.java
-│   │   ├── domain
+│   │   ├── domain/
 │   │   │   ├── Member.java
 │   │   │   └── MemberPolicy.java
-│   │   ├── in
+│   │   ├── in/
 │   │   │   ├── ApiV1MemberController.java
+│   │   │   ├── MemberDataInit.java
 │   │   │   └── MemberEventListener.java
-│   │   └── out
+│   │   ├── out/
 │   │       └── MemberRepository.java
-│   └── post
-│       ├── app
+│   ├── post/
+│       ├── app/
 │       │   ├── PostFacade.java
 │       │   └── PostWriteUseCase.java
-│       ├── domain
+│       ├── domain/
 │       │   ├── Post.java
 │       │   ├── PostComment.java
 │       │   └── PostMember.java
-│       └── out
+│       ├── in/
+│       │   ├── PostDataInit.java
+│       │   └── PostEventListener.java
+│       ├── out/
+│           ├── PostMemberRepository.java
 │           └── PostRepository.java
-├── global
-│   ├── event
+├── global/
+│   ├── event/
 │   │   └── EventPublisher.java
-│   ├── exception
+│   ├── exception/
 │   │   └── DomainException.java
-│   ├── initData
-│   │   └── DataInit.java
-│   ├── jpa
-│   │   └── entity
+│   ├── global/
+│   │   └── GlobalConfig.java
+│   ├── jpa/
+│   │   ├── entity/
 │   │       ├── BaseEntity.java
-│   │       └── BaseIdAndTime.java
-│   └── rsData
+│   │       ├── BaseIdAndTime.java
+│   │       ├── BaseIdAndTimeManual.java
+│   │       └── BaseManualIdAndTime.java
+│   ├── rsData/
 │       └── RsData.java
-└── shared/
-    ├── member/
-    │   ├── domain/
-    │   │   ├── BaseMember.java
-    │   │   ├── ReplicaMember.java
-    │   │   └── SourceMember.java
-    │   ├── dto/
-    │   │   └── MemberDto.java
-    │   ├── event/
-    │   │   ├── MemberJoinedEvent.java
-    │   │   └── MemberModifiedEvent.java
-    │   ├── out/
-    │       └── MemberApiClient.java
-    ├── post/
-        ├── dto/
-        │   ├── PostCommentDto.java
-        │   └── PostDto.java
-        ├── event/
-            ├── PostCommentCreatedEvent.java
-            └── PostCreatedEvent.java
+├── shared/
+│   ├── member/
+│   │   ├── domain/
+│   │   │   ├── BaseMember.java
+│   │   │   ├── ReplicaMember.java
+│   │   │   └── SourceMember.java
+│   │   ├── dto/
+│   │   │   └── MemberDto.java
+│   │   ├── event/
+│   │   │   ├── MemberJoinedEvent.java
+│   │   │   └── MemberModifiedEvent.java
+│   │   ├── out/
+│   │       └── MemberApiClient.java
+│   ├── post/
+│       ├── dto/
+│       │   ├── PostCommentDto.java
+│       │   └── PostDto.java
+│       ├── event/
+│           ├── PostCommentCreatedEvent.java
+│           └── PostCreatedEvent.java
+└── BackApplication.java
+
 
 ```
 
