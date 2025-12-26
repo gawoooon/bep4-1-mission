@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 24강 : CashMember와 1:1 관계인 지갑 생성 ✅
+- 25강 : user1 회원의 지갑에 15만원, 10만원, 5만원 입금, user2 회원의 지갑에 15만원 입금 ✅
 
 ---
 
@@ -19,9 +19,11 @@ src/main/java/com/back/
 │   │   ├── app/
 │   │   │   └── CashFacade.java
 │   │   ├── domain/
+│   │   │   ├── CashLog.java
 │   │   │   ├── CashMember.java
 │   │   │   └── Wallet.java
 │   │   ├── in/
+│   │   │   ├── CashDataInit.java
 │   │   │   └── CashEventListener.java
 │   │   ├── out/
 │   │       ├── CashMemberRepository.java
@@ -89,6 +91,7 @@ src/main/java/com/back/
 │           ├── PostCommentCreatedEvent.java
 │           └── PostCreatedEvent.java
 └── BackApplication.java
+
 
 
 ```
