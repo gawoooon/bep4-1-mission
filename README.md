@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 25강 : user1 회원의 지갑에 15만원, 10만원, 5만원 입금, user2 회원의 지갑에 15만원 입금 ✅
+- 27강 : cash 모듈 리팩토링, CashEventListener에 있는 비지니스 로직을 이벤트를 사용하여 제거 ✅
 
 ---
 
@@ -17,7 +17,10 @@ src/main/java/com/back/
 ├── boundedContext/
 │   ├── cash/
 │   │   ├── app/
-│   │   │   └── CashFacade.java
+│   │   │   ├── CashCreateWalletUseCase.java
+│   │   │   ├── CashFacade.java
+│   │   │   ├── CashSupport.java
+│   │   │   └── CashSyncMemberUseCase.java
 │   │   ├── domain/
 │   │   │   ├── CashLog.java
 │   │   │   ├── CashMember.java
@@ -71,6 +74,11 @@ src/main/java/com/back/
 │   ├── rsData/
 │       └── RsData.java
 ├── shared/
+│   ├── cash/
+│   │   ├── dto/
+│   │   │   └── CashMemberDto.java
+│   │   ├── event/
+│   │       └── CashMemberCreatedEvent.java
 │   ├── member/
 │   │   ├── domain/
 │   │   │   ├── BaseMember.java
@@ -91,8 +99,6 @@ src/main/java/com/back/
 │           ├── PostCommentCreatedEvent.java
 │           └── PostCreatedEvent.java
 └── BackApplication.java
-
-
 
 ```
 
