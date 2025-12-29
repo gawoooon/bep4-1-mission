@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 30강 : market 모듈 추가, MarketMember 구현 ✅
+- 31강 : 글 조회를 위해서 PostApiClient 구현 ✅
 
 ---
 
@@ -38,6 +38,7 @@ src/main/java/com/back/
 │   │   ├── domain/
 │   │   │   └── MarketMember.java
 │   │   ├── in/
+│   │   │   ├── MarketDataInit.java
 │   │   │   └── MarketEventListener.java
 │   │   ├── out/
 │   │       └── MarketMemberRepository.java
@@ -67,6 +68,7 @@ src/main/java/com/back/
 │       │   ├── PostComment.java
 │       │   └── PostMember.java
 │       ├── in/
+│       │   ├── ApiV1PostController.java
 │       │   ├── PostDataInit.java
 │       │   └── PostEventListener.java
 │       ├── out/
@@ -110,9 +112,12 @@ src/main/java/com/back/
 │       │   ├── PostCommentDto.java
 │       │   └── PostDto.java
 │       ├── event/
-│           ├── PostCommentCreatedEvent.java
-│           └── PostCreatedEvent.java
+│       │   ├── PostCommentCreatedEvent.java
+│       │   └── PostCreatedEvent.java
+│       ├── out/
+│           └── PostApiClient.java
 └── BackApplication.java
+
 
 ```
 
