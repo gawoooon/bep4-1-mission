@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 31강 : 글 조회를 위해서 PostApiClient 구현 ✅
+- 32강 : 글 6개로부터 상품 6개 생성 ✅
 
 ---
 
@@ -33,15 +33,19 @@ src/main/java/com/back/
 │   │       └── WalletRepository.java
 │   ├── market/
 │   │   ├── app/
+│   │   │   ├── MarketCreateProductUseCase.java
 │   │   │   ├── MarketFacade.java
+│   │   │   ├── MarketSupport.java
 │   │   │   └── MarketSyncMemberUseCase.java
 │   │   ├── domain/
-│   │   │   └── MarketMember.java
+│   │   │   ├── MarketMember.java
+│   │   │   └── Product.java
 │   │   ├── in/
 │   │   │   ├── MarketDataInit.java
 │   │   │   └── MarketEventListener.java
 │   │   ├── out/
-│   │       └── MarketMemberRepository.java
+│   │       ├── MarketMemberRepository.java
+│   │       └── ProductRepository.java
 │   ├── member/
 │   │   ├── app/
 │   │   │   ├── MemberFacade.java
@@ -117,7 +121,6 @@ src/main/java/com/back/
 │       ├── out/
 │           └── PostApiClient.java
 └── BackApplication.java
-
 
 ```
 
