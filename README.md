@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 35강 : 주문 결제처리 ✅
+- 36강 : 토스 페이먼츠 연동 ✅
 
 ---
 
@@ -28,6 +28,7 @@ src/main/java/com/back/
 │   │   │   ├── CashPolicy.java
 │   │   │   └── Wallet.java
 │   │   ├── in/
+│   │   │   ├── ApiV1WalletController.java
 │   │   │   ├── CashDataInit.java
 │   │   │   └── CashEventListener.java
 │   │   ├── out/
@@ -52,6 +53,7 @@ src/main/java/com/back/
 │   │   │   ├── OrderItem.java
 │   │   │   └── Product.java
 │   │   ├── in/
+│   │   │   ├── ApiV1OrderController.java
 │   │   │   ├── MarketDataInit.java
 │   │   │   └── MarketEventListener.java
 │   │   ├── out/
@@ -109,18 +111,23 @@ src/main/java/com/back/
 ├── shared/
 │   ├── cash/
 │   │   ├── dto/
-│   │   │   └── CashMemberDto.java
+│   │   │   ├── CashMemberDto.java
+│   │   │   └── WalletDto.java
 │   │   ├── event/
-│   │       ├── CashMemberCreatedEvent.java
-│   │       ├── CashOrderPaymentFailedEvent.java
-│   │       └── CashOrderPaymentSucceededEvent.java
+│   │   │   ├── CashMemberCreatedEvent.java
+│   │   │   ├── CashOrderPaymentFailedEvent.java
+│   │   │   └── CashOrderPaymentSucceededEvent.java
+│   │   ├── out/
+│   │       └── CashApiClient.java
 │   ├── market/
 │   │   ├── dto/
 │   │   │   ├── MarketMemberDto.java
 │   │   │   └── OrderDto.java
 │   │   ├── event/
-│   │       ├── MarketMemberCreatedEvent.java
-│   │       └── MarketOrderPaymentRequestedEvent.java
+│   │   │   ├── MarketMemberCreatedEvent.java
+│   │   │   └── MarketOrderPaymentRequestedEvent.java
+│   │   ├── out/
+│   │       └── TossPaymentsService.java
 │   ├── member/
 │   │   ├── domain/
 │   │   │   ├── BaseMember.java
