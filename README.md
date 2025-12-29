@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 34강 : 주문 생성 ✅
+- 35강 : 주문 결제처리 ✅
 
 ---
 
@@ -17,6 +17,7 @@ src/main/java/com/back/
 ├── boundedContext/
 │   ├── cash/
 │   │   ├── app/
+│   │   │   ├── CashCompleteOrderPaymentUseCase.java
 │   │   │   ├── CashCreateWalletUseCase.java
 │   │   │   ├── CashFacade.java
 │   │   │   ├── CashSupport.java
@@ -24,6 +25,7 @@ src/main/java/com/back/
 │   │   ├── domain/
 │   │   │   ├── CashLog.java
 │   │   │   ├── CashMember.java
+│   │   │   ├── CashPolicy.java
 │   │   │   └── Wallet.java
 │   │   ├── in/
 │   │   │   ├── CashDataInit.java
@@ -33,7 +35,10 @@ src/main/java/com/back/
 │   │       └── WalletRepository.java
 │   ├── market/
 │   │   ├── app/
+│   │   │   ├── MarketCancelOrderRequestPaymentUseCase.java
+│   │   │   ├── MarketCompleteOrderPaymentUseCase.java
 │   │   │   ├── MarketCreateCartUseCase.java
+│   │   │   ├── MarketCreateOrderUseCase.java
 │   │   │   ├── MarketCreateProductUseCase.java
 │   │   │   ├── MarketFacade.java
 │   │   │   ├── MarketSupport.java
@@ -42,6 +47,9 @@ src/main/java/com/back/
 │   │   │   ├── Cart.java
 │   │   │   ├── CartItem.java
 │   │   │   ├── MarketMember.java
+│   │   │   ├── MarketPolicy.java
+│   │   │   ├── Order.java
+│   │   │   ├── OrderItem.java
 │   │   │   └── Product.java
 │   │   ├── in/
 │   │   │   ├── MarketDataInit.java
@@ -49,6 +57,7 @@ src/main/java/com/back/
 │   │   ├── out/
 │   │       ├── CartRepository.java
 │   │       ├── MarketMemberRepository.java
+│   │       ├── OrderRepository.java
 │   │       └── ProductRepository.java
 │   ├── member/
 │   │   ├── app/
@@ -102,12 +111,16 @@ src/main/java/com/back/
 │   │   ├── dto/
 │   │   │   └── CashMemberDto.java
 │   │   ├── event/
-│   │       └── CashMemberCreatedEvent.java
+│   │       ├── CashMemberCreatedEvent.java
+│   │       ├── CashOrderPaymentFailedEvent.java
+│   │       └── CashOrderPaymentSucceededEvent.java
 │   ├── market/
 │   │   ├── dto/
-│   │   │   └── MarketMemberDto.java
+│   │   │   ├── MarketMemberDto.java
+│   │   │   └── OrderDto.java
 │   │   ├── event/
-│   │       └── MarketMemberCreatedEvent.java
+│   │       ├── MarketMemberCreatedEvent.java
+│   │       └── MarketOrderPaymentRequestedEvent.java
 │   ├── member/
 │   │   ├── domain/
 │   │   │   ├── BaseMember.java
@@ -130,7 +143,6 @@ src/main/java/com/back/
 │       ├── out/
 │           └── PostApiClient.java
 └── BackApplication.java
-
 
 ```
 
