@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 32강 : 글 6개로부터 상품 6개 생성 ✅
+- 33강 : MarketMember와 1:1 관계인 장바구니 생성, 장바구니 품목 추가 ✅
 
 ---
 
@@ -33,17 +33,21 @@ src/main/java/com/back/
 │   │       └── WalletRepository.java
 │   ├── market/
 │   │   ├── app/
+│   │   │   ├── MarketCreateCartUseCase.java
 │   │   │   ├── MarketCreateProductUseCase.java
 │   │   │   ├── MarketFacade.java
 │   │   │   ├── MarketSupport.java
 │   │   │   └── MarketSyncMemberUseCase.java
 │   │   ├── domain/
+│   │   │   ├── Cart.java
+│   │   │   ├── CartItem.java
 │   │   │   ├── MarketMember.java
 │   │   │   └── Product.java
 │   │   ├── in/
 │   │   │   ├── MarketDataInit.java
 │   │   │   └── MarketEventListener.java
 │   │   ├── out/
+│   │       ├── CartRepository.java
 │   │       ├── MarketMemberRepository.java
 │   │       └── ProductRepository.java
 │   ├── member/
@@ -99,6 +103,11 @@ src/main/java/com/back/
 │   │   │   └── CashMemberDto.java
 │   │   ├── event/
 │   │       └── CashMemberCreatedEvent.java
+│   ├── market/
+│   │   ├── dto/
+│   │   │   └── MarketMemberDto.java
+│   │   ├── event/
+│   │       └── MarketMemberCreatedEvent.java
 │   ├── member/
 │   │   ├── domain/
 │   │   │   ├── BaseMember.java
@@ -121,6 +130,7 @@ src/main/java/com/back/
 │       ├── out/
 │           └── PostApiClient.java
 └── BackApplication.java
+
 
 ```
 
