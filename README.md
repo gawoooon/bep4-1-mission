@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 44강 : 주문 품목 불러오기 후 PayoutCandidateItem 생성 ✅
+- 45강 : PayoutItem 모으기 ✅
 
 ---
 
@@ -79,6 +79,7 @@ src/main/java/com/back/
 │   ├── payout/
 │   │   ├── app/
 │   │   │   ├── PayoutAddPayoutCandidateItemsUseCase.java
+│   │   │   ├── PayoutCollectPayoutItemsMoreUseCase.java
 │   │   │   ├── PayoutCreatePayoutUseCase.java
 │   │   │   ├── PayoutFacade.java
 │   │   │   ├── PayoutSupport.java
@@ -88,8 +89,10 @@ src/main/java/com/back/
 │   │   │   ├── PayoutCandidateItem.java
 │   │   │   ├── PayoutEventType.java
 │   │   │   ├── PayoutItem.java
-│   │   │   └── PayoutMember.java
+│   │   │   ├── PayoutMember.java
+│   │   │   └── PayoutPolicy.java
 │   │   ├── in/
+│   │   │   ├── PayoutDataInit.java
 │   │   │   └── PayoutEventListener.java
 │   │   ├── out/
 │   │       ├── PayoutCandidateItemRepository.java
@@ -180,7 +183,9 @@ src/main/java/com/back/
 │   ├── modelType/
 │   │   └── CanGetModelTypeCode.java
 │   ├── resultType/
-│       └── ResultType.java
+│   │   └── ResultType.java
+│   ├── util/
+│       └── Util.java
 └── BackApplication.java
 
 ```
