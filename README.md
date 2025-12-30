@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
--  43강 : MarketOrderPaymentCompletedEvent 이벤트 수신 후 주문 품목 불러오기 ✅
+- 44강 : 주문 품목 불러오기 후 PayoutCandidateItem 생성 ✅
 
 ---
 
@@ -81,15 +81,18 @@ src/main/java/com/back/
 │   │   │   ├── PayoutAddPayoutCandidateItemsUseCase.java
 │   │   │   ├── PayoutCreatePayoutUseCase.java
 │   │   │   ├── PayoutFacade.java
+│   │   │   ├── PayoutSupport.java
 │   │   │   └── PayoutSyncMemberUseCase.java
 │   │   ├── domain/
 │   │   │   ├── Payout.java
+│   │   │   ├── PayoutCandidateItem.java
 │   │   │   ├── PayoutEventType.java
 │   │   │   ├── PayoutItem.java
 │   │   │   └── PayoutMember.java
 │   │   ├── in/
 │   │   │   └── PayoutEventListener.java
 │   │   ├── out/
+│   │       ├── PayoutCandidateItemRepository.java
 │   │       ├── PayoutMemberRepository.java
 │   │       └── PayoutRepository.java
 │   ├── post/
