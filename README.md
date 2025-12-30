@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 40강 : 인터페이스 도입하여 개발자 마음속의 규격을 코드로 드러내기 ✅
+- 41강 : PayoutMember 생성 후 이벤트(PayoutMemberCreatedEvent) 발생, 주문 결제가 완료되면 이벤트(MarketOrderPaymentCompletedEvent) 발생 ✅
 
 ---
 
@@ -76,6 +76,18 @@ src/main/java/com/back/
 │   │   │   └── MemberEventListener.java
 │   │   ├── out/
 │   │       └── MemberRepository.java
+│   ├── payout/
+│   │   ├── app/
+│   │   │   ├── PayoutAddPayoutCandidateItemsUseCase.java
+│   │   │   ├── PayoutCreatePayoutUseCase.java
+│   │   │   ├── PayoutFacade.java
+│   │   │   └── PayoutSyncMemberUseCase.java
+│   │   ├── domain/
+│   │   │   └── PayoutMember.java
+│   │   ├── in/
+│   │   │   └── PayoutEventListener.java
+│   │   ├── out/
+│   │       └── PayoutMemberRepository.java
 │   ├── post/
 │       ├── app/
 │       │   ├── PostFacade.java
@@ -125,6 +137,7 @@ src/main/java/com/back/
 │   │   │   └── OrderDto.java
 │   │   ├── event/
 │   │   │   ├── MarketMemberCreatedEvent.java
+│   │   │   ├── MarketOrderPaymentCompletedEvent.java
 │   │   │   └── MarketOrderPaymentRequestedEvent.java
 │   │   ├── out/
 │   │       └── TossPaymentsService.java
@@ -140,6 +153,11 @@ src/main/java/com/back/
 │   │   │   └── MemberModifiedEvent.java
 │   │   ├── out/
 │   │       └── MemberApiClient.java
+│   ├── payout/
+│   │   ├── dto/
+│   │   │   └── PayoutMemberDto.java
+│   │   ├── event/
+│   │       └── PayoutMemberCreatedEvent.java
 │   ├── post/
 │       ├── dto/
 │       │   ├── PostCommentDto.java
