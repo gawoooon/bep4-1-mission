@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
--  42강 : PayoutMemberCreatedEvent 이벤트 수신 후 Payout 생성 ✅
+-  43강 : MarketOrderPaymentCompletedEvent 이벤트 수신 후 주문 품목 불러오기 ✅
 
 ---
 
@@ -138,12 +138,14 @@ src/main/java/com/back/
 │   ├── market/
 │   │   ├── dto/
 │   │   │   ├── MarketMemberDto.java
-│   │   │   └── OrderDto.java
+│   │   │   ├── OrderDto.java
+│   │   │   └── OrderItemDto.java
 │   │   ├── event/
 │   │   │   ├── MarketMemberCreatedEvent.java
 │   │   │   ├── MarketOrderPaymentCompletedEvent.java
 │   │   │   └── MarketOrderPaymentRequestedEvent.java
 │   │   ├── out/
+│   │       ├── MarketApiClient.java
 │   │       └── TossPaymentsService.java
 │   ├── member/
 │   │   ├── domain/
