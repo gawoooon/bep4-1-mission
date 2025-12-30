@@ -6,7 +6,6 @@ import com.back.boundedContext.post.out.PostRepository;
 import com.back.global.event.EventPublisher;
 import com.back.global.rsData.RsData;
 import com.back.shared.member.out.MemberApiClient;
-import com.back.shared.post.dto.PostDto;
 import com.back.shared.post.event.PostCreatedEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,7 @@ public class PostWriteUseCase {
         String randomSecureTip = memberApiClient.getRandomSecureTip();
         eventPublisher.publish(
                 new PostCreatedEvent(
-                        new PostDto(post)
+                        post.toDto()
                 )
         );
         return new RsData<>("201-1", "%d번 글이 생성되었습니다. 보안 팁 : %s".formatted(post.getId(), randomSecureTip), post);
