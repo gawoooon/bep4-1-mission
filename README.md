@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 38강 : 이벤트 객체 수신 코드가 Facade와 UseCase에 침투해 있는것을 제거 ✅
+- 40강 : 인터페이스 도입하여 개발자 마음속의 규격을 코드로 드러내기 ✅
 
 ---
 
@@ -149,6 +149,11 @@ src/main/java/com/back/
 │       │   └── PostCreatedEvent.java
 │       ├── out/
 │           └── PostApiClient.java
+├── standard/
+│   ├── modelType/
+│   │   └── CanGetModelTypeCode.java
+│   ├── resultType/
+│       └── ResultType.java
 └── BackApplication.java
 
 ```
