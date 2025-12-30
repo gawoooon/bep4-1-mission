@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 41강 : PayoutMember 생성 후 이벤트(PayoutMemberCreatedEvent) 발생, 주문 결제가 완료되면 이벤트(MarketOrderPaymentCompletedEvent) 발생 ✅
+-  42강 : PayoutMemberCreatedEvent 이벤트 수신 후 Payout 생성 ✅
 
 ---
 
@@ -83,11 +83,15 @@ src/main/java/com/back/
 │   │   │   ├── PayoutFacade.java
 │   │   │   └── PayoutSyncMemberUseCase.java
 │   │   ├── domain/
+│   │   │   ├── Payout.java
+│   │   │   ├── PayoutEventType.java
+│   │   │   ├── PayoutItem.java
 │   │   │   └── PayoutMember.java
 │   │   ├── in/
 │   │   │   └── PayoutEventListener.java
 │   │   ├── out/
-│   │       └── PayoutMemberRepository.java
+│   │       ├── PayoutMemberRepository.java
+│   │       └── PayoutRepository.java
 │   ├── post/
 │       ├── app/
 │       │   ├── PostFacade.java
