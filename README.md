@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 49강 : Payout 집행 후 결과 저장하는 작업을 배치 잡의 스텝으로 추가 ✅
+- 50강 : 배치 잡을 스케쥴러에 의해서 매일 01시, 04시, 22시에 수행하도록 ✅
 
 ---
 
@@ -96,7 +96,8 @@ src/main/java/com/back/
 │   │   ├── in/
 │   │   │   ├── PayoutCollectItemsAndCompletePayoutsBatchJobConfig.java
 │   │   │   ├── PayoutDataInit.java
-│   │   │   └── PayoutEventListener.java
+│   │   │   ├── PayoutEventListener.java
+│   │   │   └── PayoutScheduler.java
 │   │   ├── out/
 │   │       ├── PayoutCandidateItemRepository.java
 │   │       ├── PayoutMemberRepository.java
