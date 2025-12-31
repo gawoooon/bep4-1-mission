@@ -3,7 +3,7 @@
 > **bep4-1-mission** — DDD(도메인 주도 설계) 학습을 위한 미션 프로젝트
 
 ## 진행 현황
-- 45강 : PayoutItem 모으기 ✅
+- 49강 : Payout 집행 후 결과 저장하는 작업을 배치 잡의 스텝으로 추가 ✅
 
 ---
 
@@ -18,6 +18,7 @@ src/main/java/com/back/
 │   ├── cash/
 │   │   ├── app/
 │   │   │   ├── CashCompleteOrderPaymentUseCase.java
+│   │   │   ├── CashCompletePayoutUseCase.java
 │   │   │   ├── CashCreateWalletUseCase.java
 │   │   │   ├── CashFacade.java
 │   │   │   ├── CashSupport.java
@@ -80,6 +81,7 @@ src/main/java/com/back/
 │   │   ├── app/
 │   │   │   ├── PayoutAddPayoutCandidateItemsUseCase.java
 │   │   │   ├── PayoutCollectPayoutItemsMoreUseCase.java
+│   │   │   ├── PayoutCompletePayoutsMoreUseCase.java
 │   │   │   ├── PayoutCreatePayoutUseCase.java
 │   │   │   ├── PayoutFacade.java
 │   │   │   ├── PayoutSupport.java
@@ -92,6 +94,7 @@ src/main/java/com/back/
 │   │   │   ├── PayoutMember.java
 │   │   │   └── PayoutPolicy.java
 │   │   ├── in/
+│   │   │   ├── PayoutCollectItemsAndCompletePayoutsBatchJobConfig.java
 │   │   │   ├── PayoutDataInit.java
 │   │   │   └── PayoutEventListener.java
 │   │   ├── out/
@@ -116,6 +119,8 @@ src/main/java/com/back/
 │           ├── PostMemberRepository.java
 │           └── PostRepository.java
 ├── global/
+│   ├── batch/
+│   │   └── BatchConfig.java
 │   ├── event/
 │   │   └── EventPublisher.java
 │   ├── exception/
@@ -167,8 +172,10 @@ src/main/java/com/back/
 │   │       └── MemberApiClient.java
 │   ├── payout/
 │   │   ├── dto/
+│   │   │   ├── PayoutDto.java
 │   │   │   └── PayoutMemberDto.java
 │   │   ├── event/
+│   │       ├── PayoutCompletedEvent.java
 │   │       └── PayoutMemberCreatedEvent.java
 │   ├── post/
 │       ├── dto/
@@ -181,7 +188,7 @@ src/main/java/com/back/
 │           └── PostApiClient.java
 ├── standard/
 │   ├── modelType/
-│   │   └── CanGetModelTypeCode.java
+│   │   └── HasModelTypeCode.java
 │   ├── resultType/
 │   │   └── ResultType.java
 │   ├── util/
