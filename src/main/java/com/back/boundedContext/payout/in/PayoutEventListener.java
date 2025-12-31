@@ -1,6 +1,9 @@
 package com.back.boundedContext.payout.in;
 
 
+import static org.springframework.transaction.annotation.Propagation.REQUIRES_NEW;
+import static org.springframework.transaction.event.TransactionPhase.AFTER_COMMIT;
+
 import com.back.boundedContext.payout.app.PayoutFacade;
 import com.back.shared.market.event.MarketOrderPaymentCompletedEvent;
 import com.back.shared.member.event.MemberJoinedEvent;
@@ -10,9 +13,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.event.TransactionalEventListener;
-
-import static org.springframework.transaction.annotation.Propagation.REQUIRES_NEW;
-import static org.springframework.transaction.event.TransactionPhase.AFTER_COMMIT;
 
 @Component
 @RequiredArgsConstructor
@@ -34,7 +34,7 @@ public class PayoutEventListener {
     @TransactionalEventListener(phase = AFTER_COMMIT)
     @Transactional(propagation = REQUIRES_NEW)
     public void handle(PayoutMemberCreatedEvent event) {
-        payoutFacade.createPayout(event.getMember());
+        payoutFacade.createPayout(event.getMember().getId());
     }
 
     @TransactionalEventListener(phase = AFTER_COMMIT)
